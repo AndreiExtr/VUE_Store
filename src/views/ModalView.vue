@@ -146,6 +146,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 4;
 
   .modal-content {
     background-color: white;
@@ -157,6 +158,11 @@ export default {
     text-align: center;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 576px) {
+      padding: 16px;
+      height: 100vh;
+    }
 
     .close-btn {
       position: absolute;
@@ -204,16 +210,23 @@ export default {
           font-size: 18px;
           font-weight: bold;
           color: #343030;
+
+          @media (max-width: 576px) {
+            font-size: 16px;
+          }
         }
       }
 
     }
     .slider {
       position: relative;
-      width: 652px;
       height: 400px;
       overflow: hidden;
       position: relative;
+
+      @media (max-width: 576px) {
+        height: 320px;
+      }
 
       .slider-btn {
         position: absolute;

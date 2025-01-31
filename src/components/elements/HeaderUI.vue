@@ -81,6 +81,10 @@ export default {
         padding: 0 24px;
       }
 
+      @media (max-width: 992px) {
+        padding: 0 16px;
+      }
+
       /* Бургер-меню */
       .burger-menu {
         display: none;
@@ -138,6 +142,14 @@ export default {
 
       .search-bt{
         width: 416px;
+
+        @media (max-width: 1200px) {
+          width: 416px;
+        }
+
+        @media (max-width: 576px) {
+          width: 280px;
+        }
       }
     }
   }

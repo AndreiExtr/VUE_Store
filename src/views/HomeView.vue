@@ -155,6 +155,11 @@ export default {
           margin-bottom: 24px;
           margin-top: 32px;
         }
+
+        @media (max-width: 992px) {
+          margin-bottom: 24px;
+          margin-top: 116px;
+        }
       }
 
       .cards{

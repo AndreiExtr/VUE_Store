@@ -36,6 +36,7 @@ export default {
 .search {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 
   .search-input {
     width: 100%;
@@ -46,6 +47,10 @@ export default {
     font-size: 14px;
     line-height: 20px;
     color: #343030;
+
+    @media (max-width: 992px) {
+      width: 300px;
+    }
 
     &::placeholder {
       color: #9F9F9F;
