@@ -55,6 +55,17 @@ export default {
       flex-direction: row;
       justify-content: space-between;
 
+      @media (max-width: 1280px) {
+        padding: 0 24px;
+      }
+
+      @media (max-width: 576px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        padding: 0 16px;
+      }
+
       .nav {
         display: flex;
         padding: 0;
@@ -66,12 +77,17 @@ export default {
           gap: 48px;
 
           .nav-item {
+            display: inline;
             cursor: pointer;
             font-size: 14px;
             color: #555555;
 
             &:hover {
               color: #b9b5b4;
+            }
+
+            @media (max-width: 1280px) {
+              display: none;
             }
           }
         }
@@ -83,6 +99,12 @@ export default {
         gap: 51px;
         font-size: 14px;
         color: #555555;
+
+        @media (max-width: 576px) {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
 
         .number,
         .adress{

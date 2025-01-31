@@ -108,6 +108,14 @@ export default {
   border: 1px solid #E1E1E1;
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 
+  @media (max-width: 1280px) {
+    height: 400px;
+  }
+
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+
   &:hover{
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
@@ -117,6 +125,12 @@ export default {
   &__img{
     height: 160px;
     border-bottom: 1px solid #E1E1E1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__content{
@@ -129,6 +143,11 @@ export default {
     flex-direction: column;
     justify-content: space-between;
 
+    @media (max-width: 1280px) {
+      height: 240px;
+      padding: 16px;
+    }
+
     h2{
       color: #343030;
     }
@@ -138,6 +157,13 @@ export default {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+
+      @media (max-width: 1280px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
 
       .prices{
         display: flex;

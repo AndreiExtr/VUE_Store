@@ -52,6 +52,10 @@ export default {
       flex-direction: row;
       justify-content: space-between;
 
+      @media (max-width: 1280px) {
+        padding: 0 24px;
+      }
+
       .nav {
         display: flex;
         padding: 43px 0;
@@ -61,6 +65,10 @@ export default {
           flex-direction: row;
           align-items: center;
           gap: 48px;
+
+          @media (max-width: 1200px) {
+            gap: 24px;
+          }
 
           .nav-item {
             cursor: pointer;

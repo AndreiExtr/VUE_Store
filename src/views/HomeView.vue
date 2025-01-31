@@ -1,22 +1,24 @@
 <template>
-  <div class="home">
+  <div class="main">
     <HeaderUI @search="handleSearch"/>
-    <main class="home__content">
-      <h1>Картины эпохи Возрождения</h1>
-      <div class="cards">
-        <CardUI
-          v-for="(painting, index) in filteredPaintings"
-          :key="index"
-          :image="painting.image"
-          :title="painting.title"
-          :oldPrice="painting.oldPrice"
-          :newPrice="painting.newPrice"
-          :description="painting.description"
-          :showText="painting.isSold"
-          :showPrice="painting.isPrSold"
-          @click="openModal(painting)"
-          @update-cart="updateModalState"
-        />
+    <main class="home">
+      <div class="home__content">
+        <h1>Картины эпохи Возрождения</h1>
+        <div class="cards">
+          <CardUI
+            v-for="(painting, index) in filteredPaintings"
+            :key="index"
+            :image="painting.image"
+            :title="painting.title"
+            :oldPrice="painting.oldPrice"
+            :newPrice="painting.newPrice"
+            :description="painting.description"
+            :showText="painting.isSold"
+            :showPrice="painting.isPrSold"
+            @click="openModal(painting)"
+            @update-cart="updateModalState"
+          />
+        </div>
       </div>
     </main>
     <FooterUI />
@@ -108,33 +110,74 @@ export default {
 </script>
 
 <style lang="scss">
-.home{
-  height: 100vh;
+.main{
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  &__content{
+  .home{
     width: 100%;
-    max-width: 1216px;
     height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    flex: 1;
 
-    h1{
-      color: #343030;
-      font-size: 24px;
-      font-weight: 700;
-      text-align: left;
-      margin-bottom: 39px;
-      margin-top: 45px;
-    }
-
-    .cards{
+    &__content{
+      width: 100%;
+      max-width: 1216px;
+      height: 100%;
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      @media (max-width: 1280px) {
+        padding: 0 24px;
+        width: 100%;
+        height: 100%;
+      }
+
+      @media (max-width: 576px) {
+        padding: 0 16px;
+        width: 100%;
+        height: 100%;
+      }
+
+      h1{
+        color: #343030;
+        font-size: 24px;
+        font-weight: 700;
+        text-align: left;
+        margin-bottom: 39px;
+        margin-top: 45px;
+
+        @media (max-width: 1280px) {
+          margin-bottom: 24px;
+          margin-top: 32px;
+        }
+      }
+
+      .cards{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 8px;
+
+        @media (max-width: 1280px) {
+          gap: 8px;
+          margin-bottom: 16px;
+        }
+
+        @media (max-width: 992px) {
+          display: grid;
+          gap: 16px;
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 576px) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
     }
   }
 }
