@@ -2,6 +2,10 @@
   <button class="custom-button" :disabled="isProcessing" :class="buttonClass" >
     <span v-if="isProcessing" class="loader"></span>
     <span v-if="showIcon" class="button-icon">
+      <!-- Иконка лупы для мобильных устройств -->
+      <!-- <svg v-if="isMobile" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23 21l-6-6M10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" stroke="#333" stroke-width="2" fill="none"/>
+      </svg> -->
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_20233_57)">
           <path

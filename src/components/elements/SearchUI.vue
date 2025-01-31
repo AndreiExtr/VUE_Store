@@ -52,6 +52,10 @@ export default {
       width: 300px;
     }
 
+    @media (max-width: 576px) {
+      font-size: 12px;
+    }
+
     &::placeholder {
       color: #9F9F9F;
     }

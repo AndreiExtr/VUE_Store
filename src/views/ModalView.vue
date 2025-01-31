@@ -1,7 +1,13 @@
 <template>
   <div v-if="isVisible" class="modal-overlay" @click="closeModal">
     <div class="modal-content" @click.stop>
-      <button class="close-btn" @click="closeModal">X</button>
+      <button class="close-btn" @click="closeModal">
+        <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <line x1="4" y1="4" x2="20" y2="20" stroke="black" stroke-width="2" stroke-linecap="round" />
+          <line x1="20" y1="4" x2="4" y2="20" stroke="black" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+
       <div class="slider">
         <button @click="prevImage" class="slider-btn prev-btn" v-if="images && images.length > 1">←</button>
         <img v-if="images && images.length > 0" :src="currentImage" alt="Painting Image" class="slider-image" />
@@ -150,27 +156,30 @@ export default {
 
   .modal-content {
     background-color: white;
-    padding: 24px;
-    position: relative;
+    padding: 8px 24px 24px 24px;
     width: 700px;
     height: 700px;
     max-width: 100%;
-    text-align: center;
     display: flex;
     flex-direction: column;
 
     @media (max-width: 576px) {
-      padding: 16px;
+      padding: 8px 16px 16px 16px;
       height: 100vh;
     }
 
     .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      font-size: 20px;
+      text-align: right;
+      position: relative;
+      top: 0;
+      left: 0;
+
+      @media (max-width: 576px) {
+        text-align: right;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
     }
 
     .slider-content{
